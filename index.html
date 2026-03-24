@@ -266,8 +266,8 @@
 
   <!-- Top bar -->
   <div class="topbar">
-    <button class="lang-btn active" onclick="setLang('en')">ENG</button>
-    <button class="lang-btn" onclick="setLang('es')">SPA</button>
+    <button class="lang-btn active" onclick="setLang('en', this)">ENG</button>
+    <button class="lang-btn" onclick="setLang('es', this)">SPA</button>
     <button class="mode-btn" onclick="toggleMode()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
         <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
@@ -290,7 +290,7 @@
       <div class="sidebar-section">
         <div class="sidebar-heading">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Contact
+          <span data-i18n="contact-heading">Contact</span>
         </div>
         <div class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -314,22 +314,22 @@
       <div class="sidebar-section">
         <div class="sidebar-heading">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-          Certifications
+          <span data-i18n="certs-heading">Certifications</span>
         </div>
         <div class="cert-item"><div class="cert-dot"></div> PMP®</div>
-        <div class="cert-item"><div class="cert-dot"></div> Agile Certified Practitioner</div>
-        <div class="cert-item"><div class="cert-dot"></div> Professional Scrum Master</div>
+        <div class="cert-item"><div class="cert-dot"></div> <span data-i18n="cert-1">Agile Certified Practitioner</span></div>
+        <div class="cert-item"><div class="cert-dot"></div> <span data-i18n="cert-2">Professional Scrum Master</span></div>
       </div>
 
       <!-- Skills -->
       <div class="sidebar-section">
         <div class="sidebar-heading">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          Skills
+          <span data-i18n="skills-heading">Skills</span>
         </div>
 
         <div class="skill-group">
-          <div class="skill-group-label">Project & Product</div>
+          <div class="skill-group-label" data-i18n="sg-project">Project & Product</div>
           <div class="skill-tags">
             <span class="skill-tag">PMP</span>
             <span class="skill-tag">Agile / Scrum</span>
@@ -340,7 +340,7 @@
         </div>
 
         <div class="skill-group">
-          <div class="skill-group-label">Engineering</div>
+          <div class="skill-group-label" data-i18n="sg-engineering">Engineering</div>
           <div class="skill-tags">
             <span class="skill-tag">Java</span>
             <span class="skill-tag">Python</span>
@@ -351,7 +351,7 @@
         </div>
 
         <div class="skill-group">
-          <div class="skill-group-label">Cloud & DevOps</div>
+          <div class="skill-group-label" data-i18n="sg-cloud">Cloud & DevOps</div>
           <div class="skill-tags">
             <span class="skill-tag">AWS</span>
             <span class="skill-tag">GCP</span>
@@ -363,7 +363,7 @@
         </div>
 
         <div class="skill-group">
-          <div class="skill-group-label">Data & Tools</div>
+          <div class="skill-group-label" data-i18n="sg-data">Data & Tools</div>
           <div class="skill-tags">
             <span class="skill-tag">SQL</span>
             <span class="skill-tag">Oracle DB</span>
@@ -375,7 +375,7 @@
         </div>
 
         <div class="skill-group">
-          <div class="skill-group-label">Other</div>
+          <div class="skill-group-label" data-i18n="sg-other">Other</div>
           <div class="skill-tags">
             <span class="skill-tag">Security</span>
             <span class="skill-tag">Veracode</span>
@@ -389,10 +389,10 @@
       <div class="sidebar-section">
         <div class="sidebar-heading">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Languages
+          <span data-i18n="lang-heading">Languages</span>
         </div>
-        <div class="contact-item">Spanish: Native</div>
-        <div class="contact-item">English: Fluent</div>
+        <div class="contact-item" data-i18n="lang-1">Spanish: Native</div>
+        <div class="contact-item" data-i18n="lang-2">English: Fluent</div>
       </div>
     </aside>
 
@@ -403,20 +403,20 @@
       <div class="profile-header">
         <div class="profile-name">
           Javier Cerrillo
-          <span class="profile-badge">Project &amp; Product Management</span>
+          <span class="profile-badge" data-i18n="profile-badge">Project &amp; Product Management</span>
         </div>
         <div class="profile-tags">
           <span class="profile-tag">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            Software Development Manager
+            <span data-i18n="tag-role">Software Development Manager</span>
           </span>
           <span class="profile-tag">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            Agile &amp; Scrum
+            <span data-i18n="tag-agile">Agile &amp; Scrum</span>
           </span>
           <span class="profile-tag">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Full Stack Engineering
+            <span data-i18n="tag-eng">Full Stack Engineering</span>
           </span>
         </div>
       </div>
@@ -425,9 +425,9 @@
       <div class="section">
         <div class="section-title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Summary
+          <span data-i18n="sec-summary">Summary</span>
         </div>
-        <div class="summary-box">
+        <div class="summary-box" data-i18n="summary-text">
           Experienced professional with 14 years of expertise working with medium and large clients in North America in Project and Product Management, driving delivery, planning, and organizing work. Currently at EPAM Systems Inc., with both technical and managerial expertise in applications development. Began his career as an engineer with a BS in Computer Systems Engineering and evolved into a Technical Product Manager. He can switch between Project and Product Management roles. He has a high degree of empathy with UI/UX Designers, Software Engineers, Architects, and Product Leaders. He prioritizes professional responsibility and integrity in all aspects of his work.
         </div>
       </div>
@@ -436,79 +436,79 @@
       <div class="section">
         <div class="section-title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          Work Experience
+          <span data-i18n="sec-experience">Work Experience</span>
         </div>
 
         <div class="job-card">
-          <div class="job-title">Technical Product Manager</div>
+          <div class="job-title" data-i18n="job1-title">Technical Product Manager</div>
           <div class="job-company">EPAM Systems Inc.</div>
-          <div class="job-meta">January 2019 – Present · North America</div>
+          <div class="job-meta" data-i18n="job1-meta">January 2019 – Present · North America</div>
           <ul class="job-bullets">
-            <li>Performed TPM role on projects within an Innovation Labs culture: Clareity, RPS, CloudOps, Smart Data Platform and Data Pipelines in AWS and GCP.</li>
-            <li>Communicated with stakeholders during product lifecycle including Executives, Workstream Leads, Product Owners and Vendors, suggesting improvements.</li>
-            <li>Collaborated with Workstream Leads creating Functional Requirements in Atlassian JIRA and translated them into Epics and User Stories in Pivotal Tracker.</li>
-            <li>Led and facilitated Product Development in Agile through Inceptions, IPM, Sprints, Backlog Grooming and Retrospectives.</li>
-            <li>Encouraged Agile, Scrum, and XP practices including Role Waving Planning, Agile Estimation, TDD, and MMF.</li>
-            <li>Collaborated with Software Engineers to define Jenkins Pipelines for CI/CD on Pivotal Cloud Foundry (PCF).</li>
-            <li>Led migration of Clareity Apps from PCF into Anthos KF and established Vulnerability Mitigation Strategy with Veracode.</li>
-            <li>Onboarded capabilities for Bulk Fulfillment: CMAS, Queue Mechanism for Data Extract Deliveries, Enterprise Observability with Elasticsearch, and 30+ Data Products for the SDP.</li>
+            <li data-i18n="job1-b1">Performed TPM role on projects within an Innovation Labs culture: Clareity, RPS, CloudOps, Smart Data Platform and Data Pipelines in AWS and GCP.</li>
+            <li data-i18n="job1-b2">Communicated with stakeholders during product lifecycle including Executives, Workstream Leads, Product Owners and Vendors, suggesting improvements.</li>
+            <li data-i18n="job1-b3">Collaborated with Workstream Leads creating Functional Requirements in Atlassian JIRA and translated them into Epics and User Stories in Pivotal Tracker.</li>
+            <li data-i18n="job1-b4">Led and facilitated Product Development in Agile through Inceptions, IPM, Sprints, Backlog Grooming and Retrospectives.</li>
+            <li data-i18n="job1-b5">Encouraged Agile, Scrum, and XP practices including Role Waving Planning, Agile Estimation, TDD, and MMF.</li>
+            <li data-i18n="job1-b6">Collaborated with Software Engineers to define Jenkins Pipelines for CI/CD on Pivotal Cloud Foundry (PCF).</li>
+            <li data-i18n="job1-b7">Led migration of Clareity Apps from PCF into Anthos KF and established Vulnerability Mitigation Strategy with Veracode.</li>
+            <li data-i18n="job1-b8">Onboarded capabilities for Bulk Fulfillment: CMAS, Queue Mechanism for Data Extract Deliveries, Enterprise Observability with Elasticsearch, and 30+ Data Products for the SDP.</li>
           </ul>
         </div>
 
         <div class="job-card">
-          <div class="job-title">Delivery Manager</div>
+          <div class="job-title" data-i18n="job2-title">Delivery Manager</div>
           <div class="job-company">TATA Consultancy Services</div>
-          <div class="job-meta">August 2016 – December 2018 · North America</div>
+          <div class="job-meta" data-i18n="job2-meta">August 2016 – December 2018 · North America</div>
           <ul class="job-bullets">
-            <li>Responsible for delivery of distributed technology projects for BBVA in the account.</li>
-            <li>Provided technical insight for development within an Agile culture; comprehensive knowledge of Java, REST APIs, Spring, Web Services, and Oracle DB.</li>
-            <li>Provided training and support to obtain BBVA Java Certification for IT specialists.</li>
-            <li>Estimated and elaborated proposals including SIP2000 Modernization and Plataforma Digital Comedores Bancomer, plus software architecture reviews.</li>
-            <li>Managed teams implementing DevOps, Cloud, and Microservices technologies including Git, Bitbucket, and GCP.</li>
+            <li data-i18n="job2-b1">Responsible for delivery of distributed technology projects for BBVA in the account.</li>
+            <li data-i18n="job2-b2">Provided technical insight for development within an Agile culture; comprehensive knowledge of Java, REST APIs, Spring, Web Services, and Oracle DB.</li>
+            <li data-i18n="job2-b3">Provided training and support to obtain BBVA Java Certification for IT specialists.</li>
+            <li data-i18n="job2-b4">Estimated and elaborated proposals including SIP2000 Modernization and Plataforma Digital Comedores Bancomer, plus software architecture reviews.</li>
+            <li data-i18n="job2-b5">Managed teams implementing DevOps, Cloud, and Microservices technologies including Git, Bitbucket, and GCP.</li>
           </ul>
         </div>
 
         <div class="job-card">
-          <div class="job-title">Project Manager</div>
+          <div class="job-title" data-i18n="job3-title">Project Manager</div>
           <div class="job-company">IBM Corporation</div>
-          <div class="job-meta">October 2014 – August 2016</div>
+          <div class="job-meta" data-i18n="job3-meta">October 2014 – August 2016</div>
           <ul class="job-bullets">
-            <li>Performed estimating of 150,000+ hours for Citigroup financial systems using Function Point and Use Cases, covering Electronic Banking, Insurance, Card/Risk/Fraud, and Investment Management.</li>
-            <li>Project Manager for integrating S016 and AMC using Citigroup's SDLC Methodology.</li>
-            <li>Responsible for 25 specialists providing Support and Maintenance for customers in the Distribution Sector using MDM, SCV, DM, SCP, and SS tools.</li>
-            <li>Subject Matter Expert Reviewer for Web Technologies for Financial and Insurance Customers Projects.</li>
+            <li data-i18n="job3-b1">Performed estimating of 150,000+ hours for Citigroup financial systems using Function Point and Use Cases, covering Electronic Banking, Insurance, Card/Risk/Fraud, and Investment Management.</li>
+            <li data-i18n="job3-b2">Project Manager for integrating S016 and AMC using Citigroup's SDLC Methodology.</li>
+            <li data-i18n="job3-b3">Responsible for 25 specialists providing Support and Maintenance for customers in the Distribution Sector using MDM, SCV, DM, SCP, and SS tools.</li>
+            <li data-i18n="job3-b4">Subject Matter Expert Reviewer for Web Technologies for Financial and Insurance Customers Projects.</li>
           </ul>
         </div>
 
         <div class="job-card">
-          <div class="job-title">IT Specialist Team Leader</div>
+          <div class="job-title" data-i18n="job4-title">IT Specialist Team Leader</div>
           <div class="job-company">IBM Corporation</div>
-          <div class="job-meta">March 2009 – September 2014</div>
+          <div class="job-meta" data-i18n="job4-meta">March 2009 – September 2014</div>
           <ul class="job-bullets">
-            <li>Led a team of Java Specialists for Maintenance and Support projects in Supply Chain and Production.</li>
-            <li>Became Subject Matter Expert for Java and Web Technologies.</li>
+            <li data-i18n="job4-b1">Led a team of Java Specialists for Maintenance and Support projects in Supply Chain and Production.</li>
+            <li data-i18n="job4-b2">Became Subject Matter Expert for Java and Web Technologies.</li>
           </ul>
         </div>
 
         <div class="job-card">
-          <div class="job-title">Project Leader</div>
+          <div class="job-title" data-i18n="job5-title">Project Leader</div>
           <div class="job-company">AB InBev</div>
-          <div class="job-meta">January 2008 – March 2009</div>
+          <div class="job-meta" data-i18n="job5-meta">January 2008 – March 2009</div>
           <ul class="job-bullets">
-            <li>Led a team of 5 developers focused on Idaho's Barley Fields projects (2008–2010) based on complex market rules and grower incentives.</li>
-            <li>Reduced 10% of total project cost by applying Agile Software Development principles.</li>
+            <li data-i18n="job5-b1">Led a team of 5 developers focused on Idaho's Barley Fields projects (2008–2010) based on complex market rules and grower incentives.</li>
+            <li data-i18n="job5-b2">Reduced 10% of total project cost by applying Agile Software Development principles.</li>
           </ul>
         </div>
 
         <div class="job-card">
-          <div class="job-title">Software Engineer &amp; Systems Analyst</div>
+          <div class="job-title" data-i18n="job6-title">Software Engineer &amp; Systems Analyst</div>
           <div class="job-company">AB InBev</div>
-          <div class="job-meta">April 2007 – March 2009</div>
+          <div class="job-meta" data-i18n="job6-meta">April 2007 – March 2009</div>
           <ul class="job-bullets">
-            <li>Applied Requirements Gathering through Interviewing, Wireframing, Questionnaires and Prototyping.</li>
-            <li>Implemented Enterprise Standard IT Process Methodology and Corporate IT Security Policies in Java.</li>
-            <li>Developed Digital Certificate Signatures for automated documentation delivery via email using Java APIs.</li>
-            <li>SOM System Expert and full stack development across all modules: Lab, Inventory, Accounting, Reporting, Barley Reception, Barley Dispatch.</li>
+            <li data-i18n="job6-b1">Applied Requirements Gathering through Interviewing, Wireframing, Questionnaires and Prototyping.</li>
+            <li data-i18n="job6-b2">Implemented Enterprise Standard IT Process Methodology and Corporate IT Security Policies in Java.</li>
+            <li data-i18n="job6-b3">Developed Digital Certificate Signatures for automated documentation delivery via email using Java APIs.</li>
+            <li data-i18n="job6-b4">SOM System Expert and full stack development across all modules: Lab, Inventory, Accounting, Reporting, Barley Reception, Barley Dispatch.</li>
           </ul>
         </div>
       </div>
@@ -517,13 +517,13 @@
       <div class="section">
         <div class="section-title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          Education
+          <span data-i18n="sec-education">Education</span>
         </div>
 
         <div class="edu-card">
-          <div class="edu-degree">Bachelor's Degree in Computer Systems Engineering</div>
+          <div class="edu-degree" data-i18n="edu1-degree">Bachelor's Degree in Computer Systems Engineering</div>
           <div class="edu-school">ESCOM, IPN (Instituto Politécnico Nacional)</div>
-          <div class="edu-meta">Specialty in Systems · Mexico City</div>
+          <div class="edu-meta" data-i18n="edu1-meta">Specialty in Systems · Mexico City</div>
         </div>
       </div>
 
@@ -531,32 +531,32 @@
       <div class="section">
         <div class="section-title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Additional Skills
+          <span data-i18n="sec-skills">Additional Skills</span>
         </div>
         <div class="skills-grid">
-          <span class="skills-pill">Security</span>
-          <span class="skills-pill">Software Development</span>
-          <span class="skills-pill">Continuous Improvement</span>
+          <span class="skills-pill" data-i18n="pill-security">Security</span>
+          <span class="skills-pill" data-i18n="pill-softdev">Software Development</span>
+          <span class="skills-pill" data-i18n="pill-ci">Continuous Improvement</span>
           <span class="skills-pill">SQL</span>
-          <span class="skills-pill">Databases</span>
-          <span class="skills-pill">Frameworks</span>
-          <span class="skills-pill">Mathematics</span>
-          <span class="skills-pill">Industry Trends</span>
-          <span class="skills-pill">Computer Science</span>
-          <span class="skills-pill">Software Systems</span>
-          <span class="skills-pill">Operating Systems</span>
-          <span class="skills-pill">Customer Experience</span>
-          <span class="skills-pill">Information Systems</span>
-          <span class="skills-pill">Systems Development</span>
-          <span class="skills-pill">Software Engineering</span>
-          <span class="skills-pill">Agile Development</span>
-          <span class="skills-pill">Business Administration</span>
-          <span class="skills-pill">Troubleshooting</span>
+          <span class="skills-pill" data-i18n="pill-databases">Databases</span>
+          <span class="skills-pill" data-i18n="pill-frameworks">Frameworks</span>
+          <span class="skills-pill" data-i18n="pill-math">Mathematics</span>
+          <span class="skills-pill" data-i18n="pill-trends">Industry Trends</span>
+          <span class="skills-pill" data-i18n="pill-cs">Computer Science</span>
+          <span class="skills-pill" data-i18n="pill-softsys">Software Systems</span>
+          <span class="skills-pill" data-i18n="pill-os">Operating Systems</span>
+          <span class="skills-pill" data-i18n="pill-cx">Customer Experience</span>
+          <span class="skills-pill" data-i18n="pill-is">Information Systems</span>
+          <span class="skills-pill" data-i18n="pill-sd">Systems Development</span>
+          <span class="skills-pill" data-i18n="pill-se">Software Engineering</span>
+          <span class="skills-pill" data-i18n="pill-agiledev">Agile Development</span>
+          <span class="skills-pill" data-i18n="pill-ba">Business Administration</span>
+          <span class="skills-pill" data-i18n="pill-ts">Troubleshooting</span>
         </div>
       </div>
 
       <!-- Quote -->
-      <div class="quote-box">
+      <div class="quote-box" data-i18n="quote">
         "Simplicity is the ultimate sophistication."
       </div>
 
@@ -564,13 +564,201 @@
   </div>
 
   <script>
+    const translations = {
+      en: {
+        // Sidebar
+        "contact-heading": "Contact",
+        "certs-heading": "Certifications",
+        "cert-1": "Agile Certified Practitioner",
+        "cert-2": "Professional Scrum Master",
+        "skills-heading": "Skills",
+        "sg-project": "Project & Product",
+        "sg-engineering": "Engineering",
+        "sg-cloud": "Cloud & DevOps",
+        "sg-data": "Data & Tools",
+        "sg-other": "Other",
+        "lang-heading": "Languages",
+        "lang-1": "Spanish: Native",
+        "lang-2": "English: Fluent",
+        // Header
+        "profile-badge": "Project & Product Management",
+        "tag-role": "Software Development Manager",
+        "tag-agile": "Agile & Scrum",
+        "tag-eng": "Full Stack Engineering",
+        // Sections
+        "sec-summary": "Summary",
+        "summary-text": "Experienced professional with 14 years of expertise working with medium and large clients in North America in Project and Product Management, driving delivery, planning, and organizing work. Currently at EPAM Systems Inc., with both technical and managerial expertise in applications development. Began his career as an engineer with a BS in Computer Systems Engineering and evolved into a Technical Product Manager. He can switch between Project and Product Management roles. He has a high degree of empathy with UI/UX Designers, Software Engineers, Architects, and Product Leaders. He prioritizes professional responsibility and integrity in all aspects of his work.",
+        "sec-experience": "Work Experience",
+        "sec-education": "Education",
+        "sec-skills": "Additional Skills",
+        // Jobs
+        "job1-title": "Technical Product Manager",
+        "job1-meta": "January 2019 – Present · North America",
+        "job1-b1": "Performed TPM role on projects within an Innovation Labs culture: Clareity, RPS, CloudOps, Smart Data Platform and Data Pipelines in AWS and GCP.",
+        "job1-b2": "Communicated with stakeholders during product lifecycle including Executives, Workstream Leads, Product Owners and Vendors, suggesting improvements.",
+        "job1-b3": "Collaborated with Workstream Leads creating Functional Requirements in Atlassian JIRA and translated them into Epics and User Stories in Pivotal Tracker.",
+        "job1-b4": "Led and facilitated Product Development in Agile through Inceptions, IPM, Sprints, Backlog Grooming and Retrospectives.",
+        "job1-b5": "Encouraged Agile, Scrum, and XP practices including Role Waving Planning, Agile Estimation, TDD, and MMF.",
+        "job1-b6": "Collaborated with Software Engineers to define Jenkins Pipelines for CI/CD on Pivotal Cloud Foundry (PCF).",
+        "job1-b7": "Led migration of Clareity Apps from PCF into Anthos KF and established Vulnerability Mitigation Strategy with Veracode.",
+        "job1-b8": "Onboarded capabilities for Bulk Fulfillment: CMAS, Queue Mechanism for Data Extract Deliveries, Enterprise Observability with Elasticsearch, and 30+ Data Products for the SDP.",
+        "job2-title": "Delivery Manager",
+        "job2-meta": "August 2016 – December 2018 · North America",
+        "job2-b1": "Responsible for delivery of distributed technology projects for BBVA in the account.",
+        "job2-b2": "Provided technical insight for development within an Agile culture; comprehensive knowledge of Java, REST APIs, Spring, Web Services, and Oracle DB.",
+        "job2-b3": "Provided training and support to obtain BBVA Java Certification for IT specialists.",
+        "job2-b4": "Estimated and elaborated proposals including SIP2000 Modernization and Plataforma Digital Comedores Bancomer, plus software architecture reviews.",
+        "job2-b5": "Managed teams implementing DevOps, Cloud, and Microservices technologies including Git, Bitbucket, and GCP.",
+        "job3-title": "Project Manager",
+        "job3-meta": "October 2014 – August 2016",
+        "job3-b1": "Performed estimating of 150,000+ hours for Citigroup financial systems using Function Point and Use Cases, covering Electronic Banking, Insurance, Card/Risk/Fraud, and Investment Management.",
+        "job3-b2": "Project Manager for integrating S016 and AMC using Citigroup's SDLC Methodology.",
+        "job3-b3": "Responsible for 25 specialists providing Support and Maintenance for customers in the Distribution Sector using MDM, SCV, DM, SCP, and SS tools.",
+        "job3-b4": "Subject Matter Expert Reviewer for Web Technologies for Financial and Insurance Customers Projects.",
+        "job4-title": "IT Specialist Team Leader",
+        "job4-meta": "March 2009 – September 2014",
+        "job4-b1": "Led a team of Java Specialists for Maintenance and Support projects in Supply Chain and Production.",
+        "job4-b2": "Became Subject Matter Expert for Java and Web Technologies.",
+        "job5-title": "Project Leader",
+        "job5-meta": "January 2008 – March 2009",
+        "job5-b1": "Led a team of 5 developers focused on Idaho's Barley Fields projects (2008–2010) based on complex market rules and grower incentives.",
+        "job5-b2": "Reduced 10% of total project cost by applying Agile Software Development principles.",
+        "job6-title": "Software Engineer & Systems Analyst",
+        "job6-meta": "April 2007 – March 2009",
+        "job6-b1": "Applied Requirements Gathering through Interviewing, Wireframing, Questionnaires and Prototyping.",
+        "job6-b2": "Implemented Enterprise Standard IT Process Methodology and Corporate IT Security Policies in Java.",
+        "job6-b3": "Developed Digital Certificate Signatures for automated documentation delivery via email using Java APIs.",
+        "job6-b4": "SOM System Expert and full stack development across all modules: Lab, Inventory, Accounting, Reporting, Barley Reception, Barley Dispatch.",
+        // Education
+        "edu1-degree": "Bachelor's Degree in Computer Systems Engineering",
+        "edu1-meta": "Specialty in Systems · Mexico City",
+        // Additional skills
+        "pill-security": "Security",
+        "pill-softdev": "Software Development",
+        "pill-ci": "Continuous Improvement",
+        "pill-databases": "Databases",
+        "pill-frameworks": "Frameworks",
+        "pill-math": "Mathematics",
+        "pill-trends": "Industry Trends",
+        "pill-cs": "Computer Science",
+        "pill-softsys": "Software Systems",
+        "pill-os": "Operating Systems",
+        "pill-cx": "Customer Experience",
+        "pill-is": "Information Systems",
+        "pill-sd": "Systems Development",
+        "pill-se": "Software Engineering",
+        "pill-agiledev": "Agile Development",
+        "pill-ba": "Business Administration",
+        "pill-ts": "Troubleshooting",
+        // Quote
+        "quote": '"Simplicity is the ultimate sophistication."'
+      },
+      es: {
+        // Sidebar
+        "contact-heading": "Contacto",
+        "certs-heading": "Certificaciones",
+        "cert-1": "Practicante Certificado en Agile",
+        "cert-2": "Scrum Master Profesional",
+        "skills-heading": "Habilidades",
+        "sg-project": "Proyecto y Producto",
+        "sg-engineering": "Ingeniería",
+        "sg-cloud": "Nube y DevOps",
+        "sg-data": "Datos y Herramientas",
+        "sg-other": "Otros",
+        "lang-heading": "Idiomas",
+        "lang-1": "Español: Nativo",
+        "lang-2": "Inglés: Fluido",
+        // Header
+        "profile-badge": "Gestión de Proyectos y Productos",
+        "tag-role": "Gerente de Desarrollo de Software",
+        "tag-agile": "Ágil y Scrum",
+        "tag-eng": "Ingeniería Full Stack",
+        // Sections
+        "sec-summary": "Resumen",
+        "summary-text": "Profesional experimentado con 14 años de experiencia trabajando con clientes medianos y grandes en Norteamérica en Gestión de Proyectos y Productos, impulsando la entrega, planificación y organización del trabajo. Actualmente en EPAM Systems Inc., con experiencia técnica y gerencial en desarrollo de aplicaciones. Inició su carrera como ingeniero con una Licenciatura en Ingeniería en Sistemas Computacionales y evolucionó hacia el rol de Technical Product Manager. Puede alternar entre roles de Gestión de Proyectos y Gestión de Productos. Tiene un alto grado de empatía con Diseñadores UI/UX, Ingenieros de Software, Arquitectos y Líderes de Producto. Prioriza la responsabilidad profesional y la integridad en todos los aspectos de su trabajo.",
+        "sec-experience": "Experiencia Laboral",
+        "sec-education": "Educación",
+        "sec-skills": "Habilidades Adicionales",
+        // Jobs
+        "job1-title": "Gerente Técnico de Producto",
+        "job1-meta": "Enero 2019 – Presente · Norteamérica",
+        "job1-b1": "Desempeñó el rol de TPM en proyectos dentro de una cultura de Innovation Labs: Clareity, RPS, CloudOps, Smart Data Platform y Data Pipelines en AWS y GCP.",
+        "job1-b2": "Comunicó con partes interesadas durante el ciclo de vida del producto, incluyendo Ejecutivos, Líderes de Flujo de Trabajo, Dueños de Producto y Proveedores.",
+        "job1-b3": "Colaboró con Líderes de Flujo de Trabajo creando Requisitos Funcionales en Atlassian JIRA y los tradujo en Épicas e Historias de Usuario en Pivotal Tracker.",
+        "job1-b4": "Lideró y facilitó el Desarrollo de Producto en Agile mediante Inceptions, IPM, Sprints, Refinamiento de Backlog y Retrospectivas.",
+        "job1-b5": "Promovió prácticas Agile, Scrum y XP incluyendo Role Waving Planning, Estimación Ágil, TDD y MMF.",
+        "job1-b6": "Colaboró con Ingenieros de Software para definir Pipelines de Jenkins para CI/CD en Pivotal Cloud Foundry (PCF).",
+        "job1-b7": "Lideró la migración de aplicaciones Clareity de PCF a Anthos KF y estableció la Estrategia de Mitigación de Vulnerabilidades con Veracode.",
+        "job1-b8": "Incorporó capacidades para Bulk Fulfillment: CMAS, mecanismo de cola para entregas de extracción de datos, Observabilidad Empresarial con Elasticsearch y más de 30 productos de datos para el SDP.",
+        "job2-title": "Gerente de Entrega",
+        "job2-meta": "Agosto 2016 – Diciembre 2018 · Norteamérica",
+        "job2-b1": "Responsable de la entrega de proyectos tecnológicos distribuidos para BBVA en la cuenta.",
+        "job2-b2": "Brindó orientación técnica para el desarrollo dentro de una cultura Agile; conocimiento amplio de Java, REST APIs, Spring, Web Services y Oracle DB.",
+        "job2-b3": "Impartió capacitación y soporte para obtener la Certificación Java de BBVA para especialistas en TI.",
+        "job2-b4": "Elaboró propuestas como la Modernización SIP2000 y Plataforma Digital Comedores Bancomer, además de revisiones de arquitectura de software.",
+        "job2-b5": "Gestionó equipos implementando tecnologías DevOps, Cloud y Microservicios incluyendo Git, Bitbucket y GCP.",
+        "job3-title": "Gerente de Proyectos",
+        "job3-meta": "Octubre 2014 – Agosto 2016",
+        "job3-b1": "Realizó estimaciones de más de 150,000 horas para sistemas financieros de Citigroup usando Puntos de Función y Casos de Uso, abarcando Banca Electrónica, Seguros, Tarjetas/Riesgo/Fraude y Gestión de Inversiones.",
+        "job3-b2": "Gerente de Proyecto para la integración de S016 y AMC utilizando la Metodología SDLC de Citigroup.",
+        "job3-b3": "Responsable de 25 especialistas brindando Soporte y Mantenimiento a clientes del Sector de Distribución con herramientas MDM, SCV, DM, SCP y SS.",
+        "job3-b4": "Experto Revisor en Tecnologías Web para Proyectos de Clientes Financieros y de Seguros.",
+        "job4-title": "Líder de Equipo Especialista en TI",
+        "job4-meta": "Marzo 2009 – Septiembre 2014",
+        "job4-b1": "Lideró un equipo de Especialistas Java para proyectos de Mantenimiento y Soporte en Cadena de Suministro y Producción.",
+        "job4-b2": "Se convirtió en Experto en la Materia para Java y Tecnologías Web.",
+        "job5-title": "Líder de Proyecto",
+        "job5-meta": "Enero 2008 – Marzo 2009",
+        "job5-b1": "Lideró un equipo de 5 desarrolladores enfocado en los proyectos de Campos de Cebada de Idaho (2008–2010) basados en reglas de mercado complejas e incentivos para productores.",
+        "job5-b2": "Redujo el 10% del costo total del proyecto aplicando principios de Desarrollo de Software Ágil.",
+        "job6-title": "Ingeniero de Software y Analista de Sistemas",
+        "job6-meta": "Abril 2007 – Marzo 2009",
+        "job6-b1": "Aplicó levantamiento de requisitos mediante Entrevistas, Wireframing, Cuestionarios y Prototipos.",
+        "job6-b2": "Implementó la Metodología de Proceso de TI Estándar Empresarial y Políticas de Seguridad de TI en Java.",
+        "job6-b3": "Desarrolló Firmas de Certificado Digital para entrega automatizada de documentación vía correo electrónico usando APIs de Java.",
+        "job6-b4": "Experto del Sistema SOM y desarrollo full stack en todos los módulos: Laboratorio, Inventario, Contabilidad, Reportes, Recepción y Despacho de Cebada.",
+        // Education
+        "edu1-degree": "Licenciatura en Ingeniería en Sistemas Computacionales",
+        "edu1-meta": "Especialidad en Sistemas · Ciudad de México",
+        // Additional skills
+        "pill-security": "Seguridad",
+        "pill-softdev": "Desarrollo de Software",
+        "pill-ci": "Mejora Continua",
+        "pill-databases": "Bases de Datos",
+        "pill-frameworks": "Frameworks",
+        "pill-math": "Matemáticas",
+        "pill-trends": "Tendencias de la Industria",
+        "pill-cs": "Ciencias Computacionales",
+        "pill-softsys": "Sistemas de Software",
+        "pill-os": "Sistemas Operativos",
+        "pill-cx": "Experiencia del Cliente",
+        "pill-is": "Sistemas de Información",
+        "pill-sd": "Desarrollo de Sistemas",
+        "pill-se": "Ingeniería de Software",
+        "pill-agiledev": "Desarrollo Ágil",
+        "pill-ba": "Administración de Empresas",
+        "pill-ts": "Resolución de Problemas",
+        // Quote
+        "quote": '"La simplicidad es la máxima sofisticación."'
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLang(lang, btn) {
+      currentLang = lang;
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const t = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+    }
+
     function toggleMode() {
       const body = document.body;
       body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
-    }
-    function setLang(lang) {
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
     }
   </script>
 </body>
