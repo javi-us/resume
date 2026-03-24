@@ -47,45 +47,10 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    /* Top Bar */
-    .topbar {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex; justify-content: center; align-items: center;
-      gap: 4px;
-      padding: 8px 0;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--divider);
-    }
-    [data-theme="dark"] .topbar {
-      background: rgba(24,24,37,0.9);
-      border-bottom-color: #313244;
-    }
-    .lang-btn {
-      padding: 4px 14px; border-radius: 20px;
-      border: 1px solid #ccc; background: transparent;
-      cursor: pointer; font-size: 13px; font-weight: 600;
-      color: var(--text); transition: all 0.2s;
-    }
-    .lang-btn.active, .lang-btn:hover {
-      background: var(--accent); color: #fff; border-color: var(--accent);
-    }
-    .mode-btn {
-      padding: 4px 14px; border-radius: 20px;
-      border: 1px solid #ccc; background: transparent;
-      cursor: pointer; font-size: 13px; font-weight: 600;
-      color: var(--text); display: flex; align-items: center; gap: 6px;
-      transition: all 0.2s; margin-left: 8px;
-    }
-    .mode-btn:hover { background: #eee; }
-    [data-theme="dark"] .mode-btn:hover { background: #313244; }
-
     /* Layout */
     .layout {
       display: flex;
       min-height: 100vh;
-      padding-top: 44px;
     }
 
     /* Sidebar */
@@ -96,8 +61,8 @@
       color: var(--sidebar-text);
       padding: 32px 20px;
       position: sticky;
-      top: 44px;
-      height: calc(100vh - 44px);
+      top: 0;
+      height: 100vh;
       overflow-y: auto;
     }
     .sidebar::-webkit-scrollbar { width: 4px; }
@@ -255,6 +220,21 @@
       font-size: 14px; color: var(--muted);
     }
 
+    .lang-selector {
+      display: flex; gap: 6px; justify-content: center;
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .slang-btn {
+      padding: 4px 10px; border-radius: 14px;
+      border: 1px solid #3e3e5e; background: transparent;
+      cursor: pointer; font-size: 12px; font-weight: 600;
+      color: var(--sidebar-muted); transition: all 0.2s;
+    }
+    .slang-btn.active, .slang-btn:hover {
+      background: var(--sidebar-heading); color: #1e1e2e;
+      border-color: var(--sidebar-heading);
+    }
+
     @media (max-width: 768px) {
       .layout { flex-direction: column; }
       .sidebar { width: 100%; height: auto; position: static; }
@@ -264,27 +244,28 @@
 </head>
 <body data-theme="light">
 
-  <!-- Top bar -->
-  <div class="topbar">
-    <button class="lang-btn active" onclick="setLang('en', this)">ENG</button>
-    <button class="lang-btn" onclick="setLang('es', this)">SPA</button>
-    <button class="mode-btn" onclick="toggleMode()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
-        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
-        <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
-        <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-      </svg>
-      MODE
-    </button>
-  </div>
 
   <div class="layout">
 
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="avatar">JC</div>
+
+      <!-- Language + Mode controls -->
+      <div class="lang-selector">
+        <button class="slang-btn active" onclick="setLang('en', this)">🇺🇸 EN</button>
+        <button class="slang-btn" onclick="setLang('es', this)">🇲🇽 ES</button>
+        <button class="slang-btn" onclick="setLang('zh', this)">🇨🇳 中文</button>
+        <button class="slang-btn mode-sidebar-btn" onclick="toggleMode()" title="Toggle dark/light mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" style="vertical-align:middle">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
 
       <!-- Contact -->
       <div class="sidebar-section">
@@ -740,6 +721,94 @@
         "pill-ts": "Resolución de Problemas",
         // Quote
         "quote": '"La simplicidad es la máxima sofisticación."'
+      },
+      zh: {
+        // Sidebar
+        "contact-heading": "联系方式",
+        "certs-heading": "专业认证",
+        "cert-1": "敏捷认证从业者",
+        "cert-2": "专业Scrum Master",
+        "skills-heading": "技能",
+        "sg-project": "项目与产品",
+        "sg-engineering": "工程技术",
+        "sg-cloud": "云计算与DevOps",
+        "sg-data": "数据与工具",
+        "sg-other": "其他",
+        "lang-heading": "语言能力",
+        "lang-1": "西班牙语：母语",
+        "lang-2": "英语：流利",
+        // Header
+        "profile-badge": "项目与产品管理",
+        "tag-role": "软件开发经理",
+        "tag-agile": "敏捷与Scrum",
+        "tag-eng": "全栈工程",
+        // Sections
+        "sec-summary": "个人简介",
+        "summary-text": "经验丰富的专业人士，在北美与中大型客户合作超过14年，专注于项目与产品管理，推动交付、规划和工作组织。目前就职于EPAM Systems Inc.，兼具技术与管理专长。以计算机系统工程学士学位起步，逐步成长为技术产品经理。能够灵活切换项目管理与产品管理职能，对UI/UX设计师、软件工程师、架构师和产品负责人有高度的同理心，始终将职业责任感与诚信置于工作的核心。",
+        "sec-experience": "工作经历",
+        "sec-education": "教育背景",
+        "sec-skills": "其他技能",
+        // Jobs
+        "job1-title": "技术产品经理",
+        "job1-meta": "2019年1月 – 至今 · 北美",
+        "job1-b1": "在创新实验室文化中担任TPM角色，参与项目包括：Clareity、RPS、CloudOps、智能数据平台及AWS和GCP上的数据管道。",
+        "job1-b2": "在产品生命周期中与各利益相关方沟通，包括高管、工作流负责人、产品负责人和供应商，提出改进建议。",
+        "job1-b3": "与工作流负责人协作，在Atlassian JIRA中创建功能需求，并转化为Pivotal Tracker中的Epic和用户故事。",
+        "job1-b4": "通过启动会、IPM、Sprint、待办事项梳理和回顾会议领导并推动敏捷产品开发。",
+        "job1-b5": "推广敏捷、Scrum和XP实践，包括角色轮换规划、敏捷估算、TDD和MMF。",
+        "job1-b6": "与软件工程师协作，在Pivotal Cloud Foundry（PCF）上定义Jenkins CI/CD流水线。",
+        "job1-b7": "主导Clareity应用从PCF迁移至Anthos KF，并建立基于Veracode的漏洞缓解策略。",
+        "job1-b8": "为批量履约引入多项能力：CMAS、数据提取交付队列机制、基于Elasticsearch的企业级可观测性，以及SDP的30+数据产品上线。",
+        "job2-title": "交付经理",
+        "job2-meta": "2016年8月 – 2018年12月 · 北美",
+        "job2-b1": "负责BBVA账户中分布式技术项目的交付。",
+        "job2-b2": "在敏捷文化下提供技术指导；精通Java、REST API、Spring、Web服务和Oracle DB。",
+        "job2-b3": "为IT专家提供培训和支持，助其获得BBVA Java认证。",
+        "job2-b4": "制定SIP2000现代化和Plataforma Digital Comedores Bancomer等项目提案，并进行软件架构评审。",
+        "job2-b5": "管理团队，实施DevOps、云计算和微服务技术，包括Git、Bitbucket和GCP。",
+        "job3-title": "项目经理",
+        "job3-meta": "2014年10月 – 2016年8月",
+        "job3-b1": "使用功能点和用例方法，对花旗集团金融系统进行超过15万小时的估算，涵盖电子银行、保险、信用卡/风险/欺诈和投资管理。",
+        "job3-b2": "负责使用花旗集团SDLC方法论整合S016和AMC的项目管理工作。",
+        "job3-b3": "带领25名专家，使用MDM、SCV、DM、SCP、SS等工具为配送行业客户提供支持与维护服务。",
+        "job3-b4": "担任金融及保险客户项目Web技术领域专家评审员。",
+        "job4-title": "IT专家团队负责人",
+        "job4-meta": "2009年3月 – 2014年9月",
+        "job4-b1": "带领Java专家团队承担供应链和生产领域的维护与支持项目。",
+        "job4-b2": "成为Java和Web技术领域专家。",
+        "job5-title": "项目负责人",
+        "job5-meta": "2008年1月 – 2009年3月",
+        "job5-b1": "带领5人开发团队，基于复杂市场规则和种植者激励机制，完成2008至2010年爱达荷州大麦田项目。",
+        "job5-b2": "通过应用敏捷软件开发原则，将项目总成本降低10%。",
+        "job6-title": "软件工程师兼系统分析师",
+        "job6-meta": "2007年4月 – 2009年3月",
+        "job6-b1": "通过访谈、线框图、问卷调查和原型设计进行需求收集。",
+        "job6-b2": "用Java实施企业标准IT流程方法论和企业IT安全策略。",
+        "job6-b3": "使用Java API开发数字证书签名，实现文档自动化电子邮件交付。",
+        "job6-b4": "SOM系统专家，负责所有模块的全栈开发：实验室、库存、会计、报告、大麦接收和大麦调度。",
+        // Education
+        "edu1-degree": "计算机系统工程学士学位",
+        "edu1-meta": "系统专业 · 墨西哥城",
+        // Additional skills
+        "pill-security": "信息安全",
+        "pill-softdev": "软件开发",
+        "pill-ci": "持续改进",
+        "pill-databases": "数据库",
+        "pill-frameworks": "开发框架",
+        "pill-math": "数学",
+        "pill-trends": "行业趋势",
+        "pill-cs": "计算机科学",
+        "pill-softsys": "软件系统",
+        "pill-os": "操作系统",
+        "pill-cx": "客户体验",
+        "pill-is": "信息系统",
+        "pill-sd": "系统开发",
+        "pill-se": "软件工程",
+        "pill-agiledev": "敏捷开发",
+        "pill-ba": "工商管理",
+        "pill-ts": "故障排查",
+        // Quote
+        "quote": '"简约是终极的复杂。"'
       }
     };
 
@@ -747,7 +816,7 @@
 
     function setLang(lang, btn) {
       currentLang = lang;
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.slang-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const t = translations[lang];
       document.querySelectorAll('[data-i18n]').forEach(el => {
