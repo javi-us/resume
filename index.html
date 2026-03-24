@@ -6,37 +6,48 @@
   <title>Javier Cerrillo — Software Development Manager</title>
   <style>
     :root {
+      /* Light mode (default) */
       --bg: #f5f5f0;
-      --sidebar-bg: #1e1e2e;
-      --sidebar-text: #cdd6f4;
-      --sidebar-muted: #a6adc8;
-      --sidebar-heading: #89b4fa;
+      --sidebar-bg: #dcdcdc;
+      --sidebar-text: #2e2e3e;
+      --sidebar-muted: #555566;
+      --sidebar-heading: #4a7fd4;
       --card-bg: #ffffff;
       --card-border: #e0e0d8;
       --text: #2e2e3e;
       --muted: #6c6c7e;
       --accent: #4a7fd4;
       --accent2: #5e81ac;
-      --tag-bg: #2a2a3e;
-      --tag-text: #cdd6f4;
-      --tag-border: #3e3e5e;
+      --tag-bg: #cccccc;
+      --tag-text: #2e2e3e;
+      --tag-border: #b8b8b8;
       --divider: #e0e0d8;
       --badge-bg: #4a7fd4;
       --badge-text: #fff;
       --bullet: #4a7fd4;
-    }
-    [data-theme="light"] {
-      --sidebar-bg: #1e1e2e;
-      --bg: #f5f5f0;
-      --card-bg: #ffffff;
+      --slang-border: #b8b8b8;
+      --slang-color: #444455;
+      --slang-active-bg: #4a7fd4;
+      --slang-active-color: #fff;
     }
     [data-theme="dark"] {
       --bg: #181825;
+      --sidebar-bg: #1e1e2e;
+      --sidebar-text: #cdd6f4;
+      --sidebar-muted: #a6adc8;
+      --sidebar-heading: #89b4fa;
       --card-bg: #1e1e2e;
       --card-border: #313244;
       --text: #cdd6f4;
       --muted: #a6adc8;
       --divider: #313244;
+      --tag-bg: #2a2a3e;
+      --tag-text: #cdd6f4;
+      --tag-border: #3e3e5e;
+      --slang-border: #3e3e5e;
+      --slang-color: #a6adc8;
+      --slang-active-bg: #89b4fa;
+      --slang-active-color: #1e1e2e;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -81,7 +92,7 @@
     .sidebar-section { margin-bottom: 24px; }
     .sidebar-heading {
       font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--sidebar-heading);
+      text-transform: uppercase; color: var(--accent);
       margin-bottom: 10px;
       display: flex; align-items: center; gap: 6px;
     }
@@ -92,8 +103,8 @@
       font-size: 12.5px; color: var(--sidebar-muted);
       margin-bottom: 7px; line-height: 1.4;
     }
-    .contact-item svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 1px; color: var(--sidebar-heading); }
-    .contact-item a { color: var(--sidebar-heading); text-decoration: none; }
+    .contact-item svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 1px; color: var(--accent); }
+    .contact-item a { color: var(--accent); text-decoration: none; }
     .contact-item a:hover { text-decoration: underline; }
 
     .cert-item {
@@ -103,7 +114,7 @@
     }
     .cert-dot {
       width: 6px; height: 6px; border-radius: 50%;
-      background: var(--sidebar-heading); flex-shrink: 0;
+      background: var(--accent); flex-shrink: 0;
     }
 
     .skill-group { margin-bottom: 14px; }
@@ -226,13 +237,13 @@
     }
     .slang-btn {
       padding: 4px 10px; border-radius: 14px;
-      border: 1px solid #3e3e5e; background: transparent;
+      border: 1px solid var(--slang-border); background: transparent;
       cursor: pointer; font-size: 12px; font-weight: 600;
-      color: var(--sidebar-muted); transition: all 0.2s;
+      color: var(--slang-color); transition: all 0.2s;
     }
     .slang-btn.active, .slang-btn:hover {
-      background: var(--sidebar-heading); color: #1e1e2e;
-      border-color: var(--sidebar-heading);
+      background: var(--slang-active-bg); color: var(--slang-active-color);
+      border-color: var(--slang-active-bg);
     }
 
     @media (max-width: 768px) {
@@ -242,7 +253,7 @@
     }
   </style>
 </head>
-<body data-theme="light">
+<body data-theme="dark">
 
 
   <div class="layout">
@@ -253,9 +264,6 @@
 
       <!-- Language + Mode controls -->
       <div class="lang-selector">
-        <button class="slang-btn active" onclick="setLang('en', this)">🇺🇸 EN</button>
-        <button class="slang-btn" onclick="setLang('es', this)">🇲🇽 ES</button>
-        <button class="slang-btn" onclick="setLang('zh', this)">🇨🇳 中文</button>
         <button class="slang-btn mode-sidebar-btn" onclick="toggleMode()" title="Toggle dark/light mode">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" style="vertical-align:middle">
             <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
@@ -265,6 +273,9 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
         </button>
+        <button class="slang-btn active" onclick="setLang('en', this)">🇺🇸 EN</button>
+        <button class="slang-btn" onclick="setLang('es', this)">🇲🇽 ES</button>
+        <button class="slang-btn" onclick="setLang('zh', this)">🇨🇳 中文</button>
       </div>
 
       <!-- Contact -->
